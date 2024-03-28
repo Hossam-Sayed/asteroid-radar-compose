@@ -15,7 +15,7 @@ import java.util.Locale
 
 class Repository(private val database: AsteroidDatabase) {
 
-    val pictureOfDay = database.pictureOfDayDao.getPictureOfDayFromDatabase()
+    val pictureOfDay = database.pictureOfDayDao().getPictureOfDayFromDatabase()
 
     /**
      ** Updates the asteroids in the database from the API if the data are different
@@ -23,8 +23,8 @@ class Repository(private val database: AsteroidDatabase) {
     suspend fun updateAsteroidsDatabase(startDate: String, endDate: String, apiKey: String) {
         withContext(Dispatchers.IO) {
             val asteroids = getAsteroidListFromApi(startDate, endDate, apiKey)
-            database.asteroidDao.delete()
-            database.asteroidDao.insertAll(asteroids)
+            database.asteroidDao().delete()
+            database.asteroidDao().insertAll(asteroids)
         }
     }
 
@@ -53,8 +53,8 @@ class Repository(private val database: AsteroidDatabase) {
                 pictureOfDayFromApi.mediaType == "image"
                 && pictureOfDay.value?.url != pictureOfDayFromApi.url
             ) {
-                database.pictureOfDayDao.clear()
-                database.pictureOfDayDao.insert(pictureOfDayFromApi)
+                database.pictureOfDayDao().clear()
+                database.pictureOfDayDao().insert(pictureOfDayFromApi)
             }
         }
     }

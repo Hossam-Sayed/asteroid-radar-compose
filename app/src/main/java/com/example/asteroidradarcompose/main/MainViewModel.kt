@@ -29,7 +29,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         updateApiData()
-        asteroidsList = database.asteroidDao.getAsteroids()
+        asteroidsList = database.asteroidDao().getAsteroids()
     }
 
     /**

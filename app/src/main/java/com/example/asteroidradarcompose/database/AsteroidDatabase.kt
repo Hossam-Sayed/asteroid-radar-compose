@@ -9,8 +9,8 @@ import com.example.asteroidradarcompose.PictureOfDay
 
 @Database(entities = [Asteroid::class, PictureOfDay::class], version = 1, exportSchema = false)
 abstract class AsteroidDatabase : RoomDatabase() {
-    abstract val asteroidDao: AsteroidDao
-    abstract val pictureOfDayDao: PictureOfDayDao
+    abstract fun asteroidDao(): AsteroidDao
+    abstract fun pictureOfDayDao(): PictureOfDayDao
 
     companion object {
         @Volatile
