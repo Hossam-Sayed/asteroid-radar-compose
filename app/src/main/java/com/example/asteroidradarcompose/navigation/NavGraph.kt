@@ -14,7 +14,7 @@ fun NavGraph(navController: NavHostController, mainViewModel: MainViewModel) {
         composable("main") { MainScreen(navController, mainViewModel) }
         composable("details/{asteroidId}") { backStackEntry ->
             // DetailsScreen() is a composable that shows the details of the asteroid
-            DetailsScreen(asteroidId = backStackEntry.arguments?.getString("asteroidId"))
+            DetailsScreen(mainViewModel)
         }
     }
 }
