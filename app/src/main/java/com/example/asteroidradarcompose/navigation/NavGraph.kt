@@ -12,9 +12,6 @@ import com.example.asteroidradarcompose.main.MainViewModel
 fun NavGraph(navController: NavHostController, mainViewModel: MainViewModel) {
     NavHost(navController, startDestination = "main") {
         composable("main") { MainScreen(navController, mainViewModel) }
-        composable("details/{asteroidId}") { backStackEntry ->
-            // DetailsScreen() is a composable that shows the details of the asteroid
-            DetailsScreen(mainViewModel)
-        }
+        composable("details/{asteroidId}") { DetailsScreen(mainViewModel) }
     }
 }

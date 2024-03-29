@@ -12,8 +12,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarColors
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -21,13 +19,10 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.example.asteroidradarcompose.R
-import com.example.asteroidradarcompose.ui.theme.AsteroidRadarComposeTheme
 import com.example.asteroidradarcompose.ui.theme.mainColor
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +47,6 @@ fun MainScreen(navController: NavHostController, mainViewModel: MainViewModel) {
                     .padding(innerPadding),
             ) {
                 AsyncImage(
-//            model = "https://static.vecteezy.com/system/resources/thumbnails/021/968/643/small_2x/space-nebula-night-gallaxy-illustration-cosmos-universe-astronomy-generative-ai-photo.jpg",
                     model = pictureOfDay?.url,
                     placeholder = painterResource(id = R.drawable.placeholder),
                     contentDescription = "Image of the day",
@@ -61,13 +55,11 @@ fun MainScreen(navController: NavHostController, mainViewModel: MainViewModel) {
                         .fillMaxWidth()
                         .height(250.dp)
                 )
-                // Display the text
                 Text(
                     text = "Image of the day",
                     modifier = Modifier.padding(16.dp),
                     style = MaterialTheme.typography.headlineSmall
                 )
-                // Create a list of items
                 LazyColumn {
                     items(asteroidList.size) { index ->
                         ListItem(
@@ -107,13 +99,5 @@ fun ListItem(
                 style = MaterialTheme.typography.bodySmall,
             )
         }
-    }
-}
-
-@Preview(showBackground = true, apiLevel = 33)
-@Composable
-fun GreetingPreview() {
-    AsteroidRadarComposeTheme {
-//        MainScreen(navController, mainViewModel)
     }
 }

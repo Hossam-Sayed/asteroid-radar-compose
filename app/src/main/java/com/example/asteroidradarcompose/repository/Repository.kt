@@ -1,4 +1,4 @@
-package com.example.asteroidradarcompose.Repository
+package com.example.asteroidradarcompose.repository
 
 import com.example.asteroidradarcompose.Asteroid
 import com.example.asteroidradarcompose.Constants

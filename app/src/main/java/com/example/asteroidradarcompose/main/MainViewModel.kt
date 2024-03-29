@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.asteroidradarcompose.Asteroid
 import com.example.asteroidradarcompose.BuildConfig.API_KEY
-import com.example.asteroidradarcompose.Repository.Repository
+import com.example.asteroidradarcompose.repository.Repository
 import com.example.asteroidradarcompose.database.AsteroidDatabase.Companion.getInstance
 import kotlinx.coroutines.launch
 
@@ -82,13 +82,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
      * */
     fun displayAsteroidDetails(asteroid: Asteroid) {
         _navigateToDetailScreen.value = asteroid
-    }
-
-    /**
-     * Called to indicate that navigation has completed
-     * */
-    fun displayAsteroidDetailsComplete() {
-        _navigateToDetailScreen.value = null
     }
 
     /**
