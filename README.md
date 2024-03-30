@@ -2,7 +2,7 @@
 <picture> <img width="200" src=https://github.com/Hossam-Sayed/asteroid-radar/blob/main/app/src/main/res/drawable-v24/ic_asteroid.png /> </picture> <picture> <img width="50" src=https://github.com/Hossam-Sayed/asteroid-radar-compose/assets/83096913/236b7407-dae8-4d8d-8cf7-06ff8651898c /> </picture>
 </div>
 
-# Asteroid Radar Compose <img width="36" src=https://github.com/Hossam-Sayed/asteroid-radar/assets/83096913/744c650b-9614-462f-a579-7562314e5019 />
+# Asteroid Radar 2.0 <img width="36" src=https://github.com/Hossam-Sayed/asteroid-radar/assets/83096913/744c650b-9614-462f-a579-7562314e5019 />
 This is a clone of the Asteroid Radar app found [here](https://github.com/Hossam-Sayed/asteroid-radar), entirely built with Jetpack Compose and Material 3 design.
 
 ## Description
