@@ -27,7 +27,7 @@ fun DetailsScreen(mainViewModel: MainViewModel) {
     val asteroid by mainViewModel.navigateToDetailScreen.observeAsState()
     val asteroidImage = asteroid?.let {
         if (it.isPotentiallyHazardous) R.drawable.asteroid_hazardous else R.drawable.asteroid_safe
-    } ?: R.drawable.placeholder
+    }
 
     Scaffold(
         topBar = {
@@ -46,7 +46,7 @@ fun DetailsScreen(mainViewModel: MainViewModel) {
             ) {
                 Image(
                     painter = painterResource(
-                        id = asteroidImage,
+                        id = asteroidImage!!,
                     ),
                     contentDescription = "",
                 )
